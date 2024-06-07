@@ -1,7 +1,47 @@
+*{
+  margin: 0;
+}
+
 .App{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.white{
+  background-color: white;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.red{
+  background-color: red;
+}
+
+.head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.head .russia div{
+  height: 10px;
+  width: 100vw;
+}
+
+.head img{
+  border: 1px solid black;
+}
+
+.flags{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .title{
@@ -10,7 +50,7 @@
 
 .desc{
   font-size: 1.5rem;
-  margin: 0 20px;
+  margin: 100px 20px;
 }
 
 .Loader{
@@ -19,3 +59,14 @@
   border: 2px solid red;
   padding: 10px;
 }
+
+.line{
+  height: 2px;
+  width: 100%;
+  background-color: red;
+}
+
+.area{
+  overflow-x: hidden;
+}
+

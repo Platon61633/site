@@ -33,11 +33,26 @@ export default function Home() {
 
   return (
     <div className="App">
+      <div className="head">
+        <div className="russia">
+          <div className="white"></div>
+          <div className="blue"></div>
+          <div className="red"></div>
+        </div>
+        <div className="flags">
+          <img src={'/assets/rostov.jpg'} alt="флаг Ростовской области" width={150} height={75}/>
+          <h1>zxcTMOL613</h1>
+          <img src={'/assets/tgn.png'} alt='флаг Таганрога' width={75}/>
+        </div>
+        
+
+      </div>
       <div className="title">
         Анализ результатов полётов
       </div>
       <div className="desc">
-        Сайт определяет наличие анамалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)
+        <div>Сайт определяет наличие анамалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)</div>
+        <div className="line"></div>
       </div>
       <main>
         <div className="Loader">
