@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className="porno">
-      порно без регистрации =
+      порно без регистрации = класс
     </div>
   );
 }
