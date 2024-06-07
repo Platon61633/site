@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import { Scada } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Scada({ subsets: ["latin"], weight: ['700'] });
 
 export const metadata = {
   title: "Create Next App",
