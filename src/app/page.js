@@ -65,7 +65,7 @@ export default function Home() {
       </div>
       <div>
         <div className="Loader-patriotizm">
-          <span>Загрузите файл .ulg</span>
+          <span>Загрузите файл .csv</span>
           <input type="file" onChange={handleFileUpload} accept=".ulg" />
         </div>
       
@@ -90,7 +90,7 @@ export default function Home() {
             <div className="Loader">
           <input type="file" id="file"/>
           <label for="file" className="button">
-          Загрузите файл .ulg
+          Загрузите файл .csv
 </label>
         </div>
             </main>
