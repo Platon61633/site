@@ -83,7 +83,7 @@
 }
 
 .dron{
-  background: url(../../public/assets/dron.jpg) no-repeat;
+  background: url(./dron.jpg) no-repeat;
   background-size: cover;
   color: white;
   width: 100vw;
