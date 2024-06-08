@@ -5,6 +5,8 @@ import { useState } from "react";
 
 export default function Home() {
 
+  //---------------input-----------
+
   const [csvData, setCsvData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -31,9 +33,16 @@ export default function Home() {
     reader.readAsText(file);
   };
 
+  //--------------input------------
+
+  const [Patriotizm , SetPatriotizm] = useState(false);
+  
+
   return (
-    <div className="App">
-      <div className="head">
+    <div className="Home">
+      {Patriotizm?
+      <div className="App">
+        <div className="head">
         <div className="russia">
           <div className="white"></div>
           <div className="blue"></div>
@@ -51,18 +60,44 @@ export default function Home() {
         Анализ результатов полётов
       </div>
       <div className="desc">
-        <div>Сайт определяет наличие анамалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)</div>
+        <div>Сайт определяет наличие аномалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)</div>
         <div className="line"></div>
       </div>
-      <main>
-        <div className="Loader">
+      <div>
+        <div className="Loader-patriotizm">
           <span>Загрузите файл .ulg</span>
           <input type="file" onChange={handleFileUpload} accept=".ulg" />
         </div>
       
-      <div onClick={e=>console.log(csvData, errorMessage,isLoading)}>log-----------</div>
+      <div onClick={e=>console.log(csvData, errorMessage,isLoading)}>test</div>
 
-      </main>
+      </div>
+      </div>
+      :
+      <div className="App">
+        <div className="patriotizm" onClick={()=>SetPatriotizm(true)}>
+          патриотичный сайт 
+        </div>
+        <div className="head dron">
+          <div className="black-fon">
+            <div className="title">
+              zxcTMOL613
+            </div>
+            <div className="desc">
+              <div>Сайт определяет наличие аномалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)</div>
+            </div>
+            <main>
+            <div className="Loader">
+          <span>Загрузите файл .ulg</span>
+          <input type="file" id="file"/>
+          <label for="file" className="button">
+    Загрузить
+</label>
+        </div>
+            </main>
+          </div>
+        </div>
+      </div>}
     </div>
   );
 }

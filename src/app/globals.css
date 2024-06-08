@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .white{
@@ -20,12 +21,13 @@
   background-color: red;
 }
 
-.head{
+.head, .black-fon{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
+
 
 .head .russia div{
   height: 10px;
@@ -45,15 +47,16 @@
 }
 
 .title{
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .desc{
-  font-size: 1.5rem;
+  text-align: center;
+  font-size: 2.5rem;
   margin: 100px 20px;
 }
 
-.Loader{
+.Loader-patriotizm{
   display: flex;
   flex-direction: column;
   border: 2px solid red;
@@ -66,7 +69,54 @@
   background-color: red;
 }
 
-.area{
+/* patriotizm end */
+
+.patriotizm{
+  position: fixed;
+  padding: 3px;
+  background-color: white;
+  color: red;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.dron{
+  background: url(../../public/assets/dron.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  width: 100vw;
+  height: 100%;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
+.black-fon{
+  background-color: rgba(0, 0, 0, 0.785);
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+}
+
+.dron .Loader{
+  background-color: rgba(0, 0, 0, 0.705);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dron .Loader input{
+  opacity: 0;
+}
+
+.dron .Loader .button{
+  background: #0450d5;
+  line-height: 1.2;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
