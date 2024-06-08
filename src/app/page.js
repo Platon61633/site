@@ -76,7 +76,7 @@ export default function Home() {
       :
       <div className="App">
         <div className="patriotizm" onClick={()=>SetPatriotizm(true)}>
-          патриотичный сайт 
+          патриотичный версия 
         </div>
         <div className="head dron">
           <div className="black-fon">
