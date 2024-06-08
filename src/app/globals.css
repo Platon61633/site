@@ -48,6 +48,7 @@
 
 .title{
   font-size: 3.5rem;
+  text-align: center;
 }
 
 .desc{
@@ -120,4 +121,11 @@
   padding: 15px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+@media (max-width: 500px){
+  .flags{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
