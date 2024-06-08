@@ -99,7 +99,7 @@
 }
 
 .dron .Loader{
-  background-color: rgba(0, 0, 0, 0.705);
+  background-color: #0450d5;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -109,10 +109,11 @@
 
 .dron .Loader input{
   opacity: 0;
+  position: absolute;
 }
 
 .dron .Loader .button{
-  background: #0450d5;
+  /* background: #0450d5; */
   line-height: 1.2;
   color: white;
   text-align: center;

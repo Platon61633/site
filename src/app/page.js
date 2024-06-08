@@ -88,10 +88,9 @@ export default function Home() {
             </div>
             <main>
             <div className="Loader">
-          <span>Загрузите файл .ulg</span>
           <input type="file" id="file"/>
           <label for="file" className="button">
-    Загрузить
+          Загрузите файл .ulg
 </label>
         </div>
             </main>
