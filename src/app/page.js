@@ -1,5 +1,6 @@
 'use client'
 
+import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -22,7 +23,9 @@ export default function Home() {
       return;
     }
     setIsLoading(true);
+    axios.post('https://zxctmol-joe9a0ya9-spo0dys-projects.vercel.app/upload_csv', {data: file}).then(e=>console.log(e.data))
     console.log(file);
+    setIsLoading(false)
     // const reader = new FileReader();
     // reader.onload = (e) => {
     //   const text = e.target.result;
