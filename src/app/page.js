@@ -23,7 +23,7 @@ export default function Home() {
       return;
     }
     setIsLoading(true);
-    axios.post('https://zxctmol-dfzbx4rf9-spo0dys-projects.vercel.app/upload_csv', {data: file}).then(e=>console.log(e.data))
+    axios.post('https://zxctmol-g7rfg62il-spo0dys-projects.vercel.app/upload_csv', {data: file}).then(e=>console.log(e.data))
     console.log(file);
     setIsLoading(false)
     // const reader = new FileReader();
