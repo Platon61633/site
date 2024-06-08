@@ -22,15 +22,16 @@ export default function Home() {
       return;
     }
     setIsLoading(true);
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target.result;
-      const rows = text.split('\n').map((row) => row.split(','));
-      setCsvData(rows);
-      setErrorMessage('');
-      setIsLoading(false);
-    };
-    reader.readAsText(file);
+    console.log(file);
+    // const reader = new FileReader();
+    // reader.onload = (e) => {
+    //   const text = e.target.result;
+    //   const rows = text.split('\n').map((row) => row.split(','));
+    //   setCsvData(rows);
+    //   setErrorMessage('');
+    //   setIsLoading(false);
+    // };
+    // reader.readAsText(file);
   };
 
   //--------------input------------
@@ -40,6 +41,11 @@ export default function Home() {
 
   return (
     <div className="Home">
+      {isLoading?
+      <div className="loader">
+        <span className="loader-circle"></span>
+      </div>:
+      <></>}
       {Patriotizm?
       <div className="App">
         <div className="head">
@@ -64,19 +70,17 @@ export default function Home() {
         <div className="line"></div>
       </div>
       <div>
-        <div className="Loader-patriotizm">
+        <div className="UPLoader-patriotizm">
           <span>Загрузите файл .csv</span>
-          <input type="file" onChange={handleFileUpload} accept=".ulg" />
+          <input type="file" onChange={handleFileUpload} accept=".csv" />
         </div>
-      
-      <div onClick={e=>console.log(csvData, errorMessage,isLoading)}>test</div>
 
       </div>
       </div>
       :
       <div className="App">
         <div className="patriotizm" onClick={()=>SetPatriotizm(true)}>
-          патриотичный версия 
+          патриотичная версия 
         </div>
         <div className="head dron">
           <div className="black-fon">
@@ -87,8 +91,8 @@ export default function Home() {
               <div>Сайт определяет наличие аномалии GPS, атаки на БПЛА и её тип (асинхронная, синхронная, глушение GPS)</div>
             </div>
             <main>
-            <div className="Loader">
-          <input type="file" id="file"/>
+            <div className="UPLoader">
+          <input type="file" onChange={handleFileUpload} accept=".csv" id="file"/>
           <label for="file" className="button">
           Загрузите файл .csv
 </label>

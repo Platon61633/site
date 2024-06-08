@@ -57,7 +57,7 @@
   margin: 100px 20px;
 }
 
-.Loader-patriotizm{
+.UPLoader-patriotizm{
   display: flex;
   flex-direction: column;
   border: 2px solid red;
@@ -99,7 +99,7 @@
   padding: 50px;
 }
 
-.dron .Loader{
+.dron .UPLoader{
   background-color: #0450d5;
   display: flex;
   align-items: center;
@@ -108,12 +108,12 @@
   padding: 10px;
 }
 
-.dron .Loader input{
+.dron .UPLoader input{
   opacity: 0;
   position: absolute;
 }
 
-.dron .Loader .button{
+.dron .UPLoader .button{
   /* background: #0450d5; */
   line-height: 1.2;
   color: white;
@@ -121,6 +121,71 @@
   padding: 15px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.829);
+  z-index: 3;
+}
+
+.loader-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 @media (max-width: 500px){
