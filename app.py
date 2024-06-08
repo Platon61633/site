@@ -1,5 +1,7 @@
 import os
 from flask import Flask, flash, request, redirect, url_for, jsonify, make_response, render_template
+from entropy import entropy
+from info import info
 
 UPLOAD_FOLDER = './files'
 ALLOWED_EXTENSIONS = {'csv'}
@@ -15,18 +17,20 @@ def allowed_file(filename):
 def home():
     if request.method == 'POST':
         if 'file' not in request.files:
-            response = jsonify(msg="No file part")
+            response = make_response(render_template("index.html", msg="No file part", status=0))
             return response, 400
         file = request.files['file']
         if file.filename == '':
-            response = jsonify(msg="No file provided")
+            response = make_response(render_template("index.html", msg="No file provided", status=0))
             return response, 400
         if file and allowed_file(file.filename):
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            response = jsonify(msg="Fine")
+            attack_type = entropy(filename)
+            data = info(filename)
+            response = make_response(render_template("result.html", msg="Success!", data=data, status=1))
             return response, 200
-        response = jsonify(msg="Unsupported ext")
+        response = make_response(render_template("index.html", msg="Unsupported ext", status=0))
         return response, 400
     response = make_response(render_template("index.html"))
     return response

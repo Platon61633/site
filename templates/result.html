@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <div class="phon">
+        <div class="result">
+            <div class="type">
+                Синхронная атака
+            </div>
+            <div class="trajectory">
+                <img src="../static/dron.jpg" alt="">
+                <p>траектория</p>
+            </div>
+            <div class="phis_values">
+                <p>Макс. Скорость: {{data.velocity_max}}</p>
+                <p>Мин. Скорость: {{data.velocity_min}}</p>
+                <p>Сред. Скорость: {{data.velocity_mean}}</p>
+                <p>Макс. Давление: {{data["vehicle_air_data.baro_alt_meter_max"]}}</p>
+                <p>Мин. Давление: {{data["vehicle_air_data.baro_alt_meter_min"]}}</p>
+                <p>Сред. Давление: {{data["vehicle_air_data.baro_alt_meter_mean"]}}</p>
+                <p>Макс. Высота: {{data["vehicle_gps_position.alt_max"]}}</p>
+                <p>Мин. Высота: {{data["vehicle_gps_position.alt_min"]}}</p>
+                <p>Сред. Высота: {{data["vehicle_gps_position.alt_mean"]}}</p>
+                <p>Макс. Время обновления: {{data.delta_timestamp_max}}</p>
+                <p>Мин. Время обновления: {{data.delta_timestamp_min}}</p>
+                <p>Сред. Время обновления: {{data.delta_timestamp_mean}}</p>
+                <p>Макс. Ускорение {{data.acceleration}}</p>
+                <!-- <p>Мин. Ускорение</p> -->
+                <!-- <p>Сред.</p> -->
+            </div>
+        </div>
+    </div>
+</html>
