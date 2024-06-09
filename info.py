@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 def info(filename):
-    table = pd.read_csv('./files/'+filename, delimiter=';')[['timestamp', 'vehicle_gps_position.alt', 'vehicle_gps_position.lat', 'vehicle_gps_position.lon', 'vehicle_air_data.baro_alt_meter']]
+    table = pd.read_csv(os.path.join('./files',filename), delimiter=';')[['timestamp', 'vehicle_gps_position.alt', 'vehicle_gps_position.lat', 'vehicle_gps_position.lon', 'vehicle_air_data.baro_alt_meter']]
     timestamp = table['timestamp']
 
     delta_timestamp = [timestamp[i+1]-timestamp[i] for i in range(len(timestamp)-1)]

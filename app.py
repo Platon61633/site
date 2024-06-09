@@ -28,7 +28,8 @@ def home():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             attack_type = entropy(filename)
             data = info(filename)
-            response = make_response(render_template("result.html", msg="Success!", data=data, status=1))
+            response = make_response(render_template("result.html", msg="Success!", data=data, type=attack_type, status=1))
+            os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return response, 200
         response = make_response(render_template("index.html", msg="Unsupported ext", status=0))
         return response, 400

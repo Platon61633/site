@@ -1,7 +1,7 @@
 import csv
 from math import factorial, e
 import numpy as np
-
+import os
 
 def kl_divergence(a, b):
     return sum(a[i] * np.log(a[i]/b[i]) for i in range(len(a)))
@@ -12,7 +12,7 @@ def normal_row(arr):
         norm.append(((e**(-sum(arr)/len(arr)))*((sum(arr)/len(arr))**arr[i]))/((factorial(arr[i]))))
     return norm
 def entropy(filename):
-    file = "./files/"+filename
+    file = os.path.join("./files",filename)
     sats = []
     timestamps = []
     satsRes = 0
@@ -42,9 +42,9 @@ def entropy(filename):
     # print(satsRes)
     answer=""
     if (satsRes >= 1):
-        answer="глушение/асинхр"
+        answer="Глушение/Асинхронная атака"
     elif (satsRes >= 0.04):
-        answer="синхр"
+        answer="Синхронная атака"
     else:
-        answer="норм"
+        answer="Нормальный полёт"
     return answer
